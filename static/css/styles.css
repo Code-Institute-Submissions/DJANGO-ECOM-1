@@ -1,3 +1,48 @@
 body {
     background: rgb(86, 241, 252);
 }
+
+.dropdown-item {
+    color: white !important;
+}
+.dropdown-item:hover {
+    background-color: black;
+}
+
+.carousel-item.active {
+    display: flex;
+    align-items: center;
+}
+
+.carou-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.carou-cap {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+
+@media screen and (min-width: 768px){
+  .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+        display: block;
+    }
+    .dropdown-menu{
+        margin-top: 0;
+    }
+    .dropdown-toggle{
+        margin-bottom: 2px;
+    }
+    .navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
+        margin-bottom: 0;
+    }
+}
