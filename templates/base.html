@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>{% if title %} {{title}} {% else %} Django ECOM {% endif %}</title>
   </head>
-  <body>
+  <body class="bg-secondary">
     
     <!-- nav -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">SuppSG</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +44,15 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav">
+                   
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_email' %}">Change E-mail</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a></li>
+                    {% endif %}
+    
                     <li class="nav-item">
                         <a class="nav-link" href="">My Cart</a>
                     </li>
@@ -51,14 +60,18 @@
             </div>
         </div>
     </nav>
-    {% block jumbo%}
-    {% endblock jumbo%}
-
-    <div class="container">
-        {% block content %}
-        {% endblock content %}
+    {% if messages %}
+    <div>
+        <strong>Messages:</strong>
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
     </div>
-
+    {% endif %}
+    {% block content %}
+    {% endblock content %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
