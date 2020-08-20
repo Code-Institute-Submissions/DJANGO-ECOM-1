@@ -1,3 +1,7 @@
+body {
+    background:linear-gradient(to right, #131313, #303030, #131313);
+}
+
 /* navbar */
 .navbar {
     box-shadow: 0px 2px 5px 0px rgb(17, 17, 17);
@@ -37,9 +41,6 @@
     width: 40%;
 }
 
-.card-pic {
-    min-height: 300px;
-}
 
 /* section2 */
 
@@ -49,6 +50,50 @@
     flex-direction: column;
     align-items: flex-end;
 }
+
+
+/* footer */
+
+#footer .container-fluid .foot .address {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  text-align: center;
+}
+
+#footer .container-fluid .foot .address span {
+  color: #f1ecec;
+}
+
+#footer .container-fluid .foot .address a {
+  text-decoration: none;
+  color: #f1ecec;
+}
+
+#footer .container-fluid .foot .address a:hover {
+  color: #ff3232;
+}
+
+#footer .container-fluid .foot .footer-links a {
+  text-decoration: none;
+  color: #e03a3a;
+}
+
+#footer .container-fluid .foot .footer-links a:hover {
+  color: #fffdfdf3;
+}
+
+
+#footer .container-fluid .foot .footer-links ul {
+  margin: 0;
+  padding: 0;
+}
+
+#footer .container-fluid .foot .footer-links ul a{
+    margin: 1rem;
+}
+
 
 /* dropdown on hover */
 @media screen and (min-width: 768px){

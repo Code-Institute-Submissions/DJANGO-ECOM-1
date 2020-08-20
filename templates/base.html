@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>{% if title %} {{title}} {% else %} Django ECOM {% endif %}</title>
   </head>
-  <body class="bg-secondary">
+  <body>
     
     <!-- nav -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -31,7 +31,7 @@
                         <div class="dropdown-menu bg-dark" aria-labelledby="ProductDropdown">
                             <a class="dropdown-item" href="#">Protein</a>
                             <a class="dropdown-item" href="#">Pre-workout</a>
-                            <a class="dropdown-item" href="#">Fat burner</a>
+                            <a class="dropdown-item" href="#">Essentials</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -72,6 +72,36 @@
     {% endif %}
     {% block content %}
     {% endblock content %}
+    <section class="footer bg-dark" id="footer">
+    <div class="container-fluid">
+
+
+        <div class="foot p-3">
+            <div class="address">
+                <span>75 Aliwal St</span><span> / </span
+                ><span>Singapore 199946</span><br />
+                <a href="tel:88888888" >88888888</a
+                ><span> / </span><span >info@suppsg.com</span>
+                <div class="directions">
+                    <a href="" >Get Directions</a>
+                </div>
+                <div class="social">
+                    <a href="" class="fb">FB</a>
+                    <a href="" class="ig">IG</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul class="d-flex justify-content-center">
+                    <a href="">Careers</a>
+                    <a href="#contact">Contact</a>
+                    <a href="">Privacy Policy</a>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</section>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
