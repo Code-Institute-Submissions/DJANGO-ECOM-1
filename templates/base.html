@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">HOME</a>
+                        <a class="nav-link" href="{% url 'homepage_url' %}">HOME</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="ProductDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
+                        <a class="nav-link" href="{% url 'all_products_url' %}" id="ProductDropdown">PRODUCTS</a>
                         <div class="dropdown-menu bg-dark" aria-labelledby="ProductDropdown">
                             <a class="dropdown-item" href="#">Protein</a>
                             <a class="dropdown-item" href="#">Pre-workout</a>
@@ -36,7 +36,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="BrandDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">BRANDS</a>
+                        <a class="nav-link" href="#" id="BrandDropdown">BRANDS</a>
                         <div class="dropdown-menu bg-dark" aria-labelledby="BrandDropdown">
                             <a class="dropdown-item" href="#">MusclePharm</a>
                             <a class="dropdown-item" href="#">Optimum Nutrition</a>

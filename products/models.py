@@ -31,6 +31,7 @@ class Product(models.Model):
     title = models.CharField(blank=False, max_length=100)
     desc = models.TextField(blank=False)
     image = CloudinaryField()
+    price = models.DecimalField(max_digits=10, decimal_places=3, blank=False)
 
     # relationships
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)

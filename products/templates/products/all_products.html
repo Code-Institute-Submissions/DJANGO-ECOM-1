@@ -1,9 +1,67 @@
 {% extends 'base.html' %}
+{% load cloudinary %}
 {% block content %}
-    {% if request.user.is_authenticated  %}
-    <p>Welcome {{request.user}}</p>
-    {% else %}
-    <p>Please <a href="accounts/login">Login</a></p>
-    {%endif%}
-    <h1>PRODUCTS</h1>
+    <h1 class="text-center">All Products</h1>
+    <div class="container">
+    {% for product in products%}
+        <div class="row">
+            <div class="card p-0 col-10 col-sm-4 col-md-4 col-lg-2 m-3">
+                <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=250 crop="fill" %}</div>
+                <div class="card-body bg-light">
+                    <a href="" class="text-dark text-decoration-none"><h2 class="card-title">{{product.title}}</h2></a>
+                    <p class="card-text"><strong>$26.90</strong></p>
+                    <a href="" class="btn btn-primary float-right">Add to cart</a>
+                </div>
+            </div>
+            <div class="card p-0 col-10 col-sm-4 col-md-4 col-lg-2 m-3">
+                <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=250 crop="fill" %}</div>
+                <div class="card-body bg-light">
+                    <a href="" class="text-dark text-decoration-none"><h2 class="card-title">{{product.title}}</h2></a>
+                    <p class="card-text"><strong>$26.90</strong></p>
+                    <a href="" class="btn btn-primary float-right">Add to cart</a>
+                </div>
+            </div>
+            <div class="card p-0 col-10 col-sm-4 col-md-4 col-lg-2 m-3">
+                <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=250 crop="fill" %}</div>
+                <div class="card-body bg-light">
+                    <a href="" class="text-dark text-decoration-none"><h2 class="card-title">{{product.title}}</h2></a>
+                    <p class="card-text"><strong>$26.90</strong></p>
+                    <a href="" class="btn btn-primary float-right">Add to cart</a>
+                </div>
+            </div>
+            <div class="card p-0 col-10 col-sm-4 col-md-4 col-lg-2 m-3">
+                <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=250 crop="fill" %}</div>
+                <div class="card-body bg-light">
+                    <a href="" class="text-dark text-decoration-none"><h2 class="card-title">{{product.title}}</h2></a>
+                    <p class="card-text"><strong>$26.90</strong></p>
+                    <a href="" class="btn btn-primary float-right">Add to cart</a>
+                </div>
+            </div>
+            <div class="card p-0 col-10 col-sm-4 col-md-4 col-lg-2 m-3">
+                <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=250 crop="fill" %}</div>
+                <div class="card-body bg-light">
+                    <a href="" class="text-dark text-decoration-none"><h2 class="card-title">{{product.title}}</h2></a>
+                    <p class="card-text"><strong>$26.90</strong></p>
+                    <a href="" class="btn btn-primary float-right">Add to cart</a>
+                </div>
+            </div>
+            <div class="card p-0 col-10 col-sm-4 col-md-4 col-lg-2 m-3">
+                <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=250 crop="fill" %}</div>
+                <div class="card-body bg-light">
+                    <a href="" class="text-dark text-decoration-none"><h2 class="card-title">{{product.title}}</h2></a>
+                    <p class="card-text"><strong>$26.90</strong></p>
+                    <a href="" class="btn btn-primary float-right">Add to cart</a>
+                </div>
+            </div>
+            <div class="card p-0 col-10 col-sm-4 col-md-4 col-lg-2 m-3">
+                <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=250 crop="fill" %}</div>
+                <div class="card-body bg-light">
+                    <a href="" class="text-dark text-decoration-none"><h2 class="card-title">{{product.title}}</h2></a>
+                    <p class="card-text"><strong>$26.90</strong></p>
+                    <a href="" class="btn btn-primary float-right">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
 {% endblock content %}
