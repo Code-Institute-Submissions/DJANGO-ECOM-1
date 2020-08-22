@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -29,6 +30,7 @@ class Tag(models.Model):
 class Product(models.Model):
     title = models.CharField(blank=False, max_length=100)
     desc = models.TextField(blank=False)
+    image = CloudinaryField()
 
     # relationships
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
