@@ -12,7 +12,7 @@ def add_to_cart(request, product_id):
         cart[product_id] = {
             'id': product_id,
             'title': product.title,
-            'cost': 99,
+            'cost': float(product.price),
             'qty': 1
         }
         # save the cart back to sessions
@@ -43,7 +43,7 @@ def remove_from_cart(request, product_id):
     # retrieve the cart from session
     cart = request.session.get('shopping_cart', {})
 
-    # if the book is in the cart
+    # if the product is in the cart
     if product_id in cart:
         # remove it from the cart
         del cart[product_id]
@@ -51,4 +51,15 @@ def remove_from_cart(request, product_id):
         request.session['shopping_cart'] = cart
         messages.success(request, "Item removed from cart successfully!")
 
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    return redirect(reverse('view_cart_url'))
+
+
+def update_quantity(request, product_id):
+    cart = request.session.get('shopping_cart')
+    if product_id in cart:
+        cart[product_id]['qty'] = request.POST['qty']
+        request.session['shopping_cart'] = cart
+        messages.success(request,
+                         f"Quantity for {cart[product_id]['title']} has been changed")
+
+    return redirect(reverse('view_cart_url'))
