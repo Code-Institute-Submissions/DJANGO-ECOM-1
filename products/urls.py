@@ -18,4 +18,8 @@ import products.views
 
 urlpatterns = [
     path('all_products/', products.views.all_products, name='all_products_url'),
+    path('protein/', products.views.proteins, name='proteins_url'),
+    path('essentials/', products.views.essentials, name='essentials_url'),
+    path('performance/', products.views.performance, name='performance_url'),
+    path('brands/', products.views.brands, name='brands_url'),
 ]

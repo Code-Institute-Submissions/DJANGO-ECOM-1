@@ -5,4 +5,9 @@ $(document).ready(function(){
             dropdownMenu.parent().toggleClass("open");
         }
     });
+
+    $( "#Search" ).autocomplete({
+      source: ['hello', 'world']
+    });
+
 }); 

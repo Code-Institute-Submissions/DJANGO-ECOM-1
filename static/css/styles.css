@@ -11,6 +11,15 @@
     background-color: black;
 }
 
+.ui-autocomplete {
+  z-index: 99999 !important;
+}
+
+.ui-autocomplete .ui-menu-item:hover{
+    background: black !important;
+}
+
+
 /* jumbotron */
 .carousel-item.active {
     display: flex;
@@ -30,15 +39,6 @@
     align-items: flex-start;
 }
 
-/* product cards */
-.card {
-    box-shadow: 3px 3px 5px 0px rgb(39, 39, 39);
-}
-
-.w-40 {
-    width: 40%;
-}
-
 
 /* section2 */
 
@@ -48,6 +48,17 @@
     flex-direction: column;
     align-items: flex-end;
 }
+
+/* utitlities */
+
+.min-vh-80 {
+    min-height: 80vh;
+}
+
+.w-40 {
+    width: 40%;
+}
+
 
 
 /* footer */
@@ -106,5 +117,16 @@
     }
     .navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
         margin-bottom: 0;
+    }
+}
+@media screen and (max-width: 600px){
+    #Search {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    #Search {
+        max-width: 120px;
     }
 }

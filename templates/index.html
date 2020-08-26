@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cloudinary %}
 {% block content %}
 {% include 'jumbo.html' %}
 
@@ -7,54 +8,17 @@
     <section class="mt-4 mb-4">
         <h2 class="text-center mt-2"><span>Featured Products</span></h2>
         <div class="row justify-content-center">
-            <div class="card p-0 col-10 col-sm-7 col-md-5 col-lg-3 m-3 border rounded">
-                <img src="{% static 'images/combatprotein.png' %}">
+            {% for product in featured_products %}
+            <div class="card p-0 col-10 col-sm-5 col-md-4 col-lg-2 m-3">
+                <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=220 crop="fill" %}</div>
                 <div class="card-body bg-light">
-                    <a href="" class="text-dark text-decoration-none"><h4 class="card-title">Combat Protein</h4></a>
-                    <p class="card-text"><strong>$26.90</strong></p>
-                    <a href="" class="btn btn-primary float-right">Add to cart</a>
+                    <a href="" class="text-dark text-decoration-none"><h5 class="mb-0 card-title">{{product.title}}</h5></a>
+                    <p class="text-muted">By {{ product.brand.title }}</p>
+                    <p class="card-text d-inline text-center"><strong>${{product.price}}</strong></p>
+                    <a href="" class="btn btn-sm btn-primary float-right">Add to cart</a>
                 </div>
             </div>
-            <div class="card p-0 col-10 col-sm-7 col-md-5 col-lg-3 m-3 border rounded">
-                <img src="{% static 'images/combatprotein.png' %}">
-                <div class="card-body bg-light">
-                    <a href="" class="text-dark text-decoration-none"><h4 class="card-title">Combat Protein</h4></a>
-                    <p class="card-text"><strong>$26.90</strong></p>
-                    <a href="" class="btn btn-primary float-right">Add to cart</a>
-                </div>
-            </div>
-            <div class="card p-0 col-10 col-sm-7 col-md-5 col-lg-3 m-3 border rounded">
-                <img src="{% static 'images/combatprotein.png' %}">
-                <div class="card-body bg-light">
-                    <a href="" class="text-dark text-decoration-none"><h4 class="card-title">Combat Protein</h4></a>
-                    <p class="card-text"><strong>$26.90</strong></p>
-                    <a href="" class="btn btn-primary float-right">Add to cart</a>
-                </div>
-            </div>
-            <div class="card p-0 col-10 col-sm-7 col-md-5 col-lg-3 m-3 border rounded">
-                <img src="{% static 'images/combatprotein.png' %}">
-                <div class="card-body bg-light">
-                    <a href="" class="text-dark text-decoration-none"><h4 class="card-title">Combat Protein</h4></a>
-                    <p class="card-text"><strong>$26.90</strong></p>
-                    <a href="" class="btn btn-primary float-right">Add to cart</a>
-                </div>
-            </div>
-            <div class="card p-0 col-10 col-sm-7 col-md-5 col-lg-3 m-3 border rounded">
-                <img src="{% static 'images/combatprotein.png' %}">
-                <div class="card-body bg-light">
-                    <a href="" class="text-dark text-decoration-none"><h4 class="card-title">Combat Protein</h4></a>
-                    <p class="card-text"><strong>$26.90</strong></p>
-                    <a href="" class="btn btn-primary float-right">Add to cart</a>
-                </div>
-            </div>
-            <div class="card p-0 col-10 col-sm-7 col-md-5 col-lg-3 m-3 border rounded">
-                <img src="{% static 'images/combatprotein.png' %}">
-                <div class="card-body bg-light">
-                    <a href="" class="text-dark text-decoration-none"><h4 class="card-title">Combat Protein</h4></a>
-                    <p class="card-text"><strong>$26.90</strong></p>
-                    <a href="" class="btn btn-primary float-right">Add to cart</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 </div>

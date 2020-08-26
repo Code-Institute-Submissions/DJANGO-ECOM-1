@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+{% block content %}
+    <h1 class="text-center">{{title}}</h1>
+    <div class="container min-vh-80">
+    {% for brand in brands %}
+        <h2 class="border-bottom mb-0">{{brand.title}}</h1>
+            <div class="row justify-content-sm-center justify-content-lg-start">
+        {% for product in products %}
+            {% if product.brand == brand %}
+                <div class="card border-dark p-0 col-10 col-sm-5 col-md-4 col-lg-2 m-3">
+                    <div class="product-image w-100 d-flex justify-content-center">{% cloudinary product.image width=160 height=220 crop="fill" %}</div>
+                    <div class="card-body bg-light">
+                        <a href="" class="text-dark text-decoration-none"><h5 class="card-title mb-0">{{product.title}}</h5></a>
+                        <p class="text-muted">by {{product.brand.title}}</p>
+                        <p class="card-text d-inline text-center"><strong>${{product.price}}</strong></p>
+                        <a href="" class="btn btn-sm btn-primary float-right">Add to cart</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+            </div>
+    {% endfor %}
+    </div>
+{% endblock content %}
