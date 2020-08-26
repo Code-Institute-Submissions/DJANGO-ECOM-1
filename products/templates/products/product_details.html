@@ -7,7 +7,7 @@
         <div class="col-lg-6 p-3 col-sm-10 d-flex flex-column justify-content-center align-items-center">
             <h2>{{product.title}}</h2>
             <p class="p-3">{{product.desc}}</p>
-            <a class="btn btn-info" href="">Add to cart</a>
+            <a class="btn btn-info" href="{% url 'add_to_cart_url' product_id=product.id%}">Add to cart</a>
         </div>   
     </div>
 </div>

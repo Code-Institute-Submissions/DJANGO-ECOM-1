@@ -11,7 +11,7 @@
                     <a href="" class="text-dark text-decoration-none"><h5 class="card-title mb-0">{{product.title}}</h5></a>
                     <p class="text-muted">by {{product.brand.title}}</p>
                     <p class="card-text d-inline text-center"><strong>${{product.price}}</strong></p>
-                    <a href="" class="btn btn-sm btn-primary float-right">Add to cart</a>
+                    <a href="{% url 'add_to_cart_url' product_id=product.id %}" class="btn btn-sm btn-primary float-right">Add to cart</a>
                 </div>
             </div>
             {% endfor %}

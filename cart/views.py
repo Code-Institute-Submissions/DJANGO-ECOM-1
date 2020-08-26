@@ -25,7 +25,7 @@ def add_to_cart(request, product_id):
         cart[product_id]['qty'] = int(cart[product_id]['qty']) + 1
         cart[product_id]['total_cost'] = float(cart[product_id]['total_cost']) + float(cart[product_id]['cost'])
         request.session['shopping_cart'] = cart
-        messages.success(request, "Product has been added to your cart!")
+        messages.success(request, f"{cart[product_id]['title']} has been added to your cart!")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
@@ -37,7 +37,7 @@ def view_cart(request):
         total += float(v['cost']) * int(v['qty'])
 
     context = {
-        'total': total,
+        'total': float("{:.2f}".format(total)),
         'title': 'View Cart',
         'cart': cart
     }

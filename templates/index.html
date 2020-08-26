@@ -15,7 +15,7 @@
                     <a href="" class="text-dark text-decoration-none"><h5 class="mb-0 card-title">{{product.title}}</h5></a>
                     <p class="text-muted">By {{ product.brand.title }}</p>
                     <p class="card-text d-inline text-center"><strong>${{product.price}}</strong></p>
-                    <a href="" class="btn btn-sm btn-primary float-right">Add to cart</a>
+                    <a href="{% url 'add_to_cart_url' product_id=product.id %}" class="btn btn-sm btn-primary float-right">Add to cart</a>
                 </div>
             </div>
             {% endfor %}
@@ -27,7 +27,7 @@
     <div class="container">
         <div class="cap float-right text-white"> 
             <h2 class="mb-2 w-50">Choose Your Protein</h2>
-            <a class="btn btn-primary" href="">Shop Protein</a>
+            <a class="btn btn-primary" href="{% url 'proteins_url' %}">Shop Protein</a>
         </div>
     </div>
 </section>

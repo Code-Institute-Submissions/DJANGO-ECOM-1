@@ -1,6 +1,7 @@
-from django.shortcuts import render, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, reverse, HttpResponse, get_object_or_404, redirect
 from django.views.decorators.csrf import csrf_exempt
 from .models import Purchase
+from django.contrib import messages
 from django.contrib.auth.models import User
 
 # import settings so that we can access the public stripe key
@@ -14,7 +15,10 @@ endpoint_secret = "whsec_xYipceqj7ue6NjYrxnUA3BOAGOa1BOaQ"
 
 
 def checkout_success(request):
-    return HttpResponse('checkout success')
+    # Empty the shopping cart
+    request.session['shopping_cart'] = {}
+    messages.success(request, 'Your purchase has been completed')
+    return redirect(reverse('homepage_url'))
 
 
 def checkout_cancelled(request):
