@@ -22,4 +22,5 @@ urlpatterns = [
     path('essentials/', products.views.essentials, name='essentials_url'),
     path('performance/', products.views.performance, name='performance_url'),
     path('brands/', products.views.brands, name='brands_url'),
+    path('search-results/', products.views.search_results, name='search_results_url'),
 ]

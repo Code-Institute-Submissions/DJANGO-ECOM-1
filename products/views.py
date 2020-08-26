@@ -54,3 +54,6 @@ def brands(request):
         'brands': all_brands,
     }
     return render(request, 'products/brands.html', context)
+
+def search_results(request):
+    pass
