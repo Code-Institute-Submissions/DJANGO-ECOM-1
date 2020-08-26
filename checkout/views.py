@@ -62,7 +62,12 @@ def checkout(request):
 
     # create a payment session to represent the current transaction
     session = stripe.checkout.Session.create(
-        payment_method_types=["card"],  # take credit cards
+        payment_method_types=["card"],
+        client_reference_id=request.user.id,
+        metadata={
+            "all_book_ids": ",".join(all_product_ids)
+        },
+        mode="payment",  # take credit cards
         line_items=line_items,
         success_url=domain + reverse('checkout_success'),
         cancel_url=domain + reverse('checkout_cancelled')

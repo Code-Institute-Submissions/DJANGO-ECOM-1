@@ -19,7 +19,7 @@ def add_to_cart(request, product_id):
         # save the cart back to sessions
         request.session['shopping_cart'] = cart
 
-        messages.success(request, "Product has been added to your cart!")
+        messages.success(request, f"{cart[product_id]['title']} has been added to your cart!")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         cart[product_id]['qty'] = int(cart[product_id]['qty']) + 1
