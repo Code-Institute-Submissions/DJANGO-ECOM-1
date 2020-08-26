@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# for flash messages
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # Application definition
 
@@ -50,6 +52,7 @@ INSTALLED_APPS = [
 
     # my apps
     'products',
+    'cart',
 ]
 
 MIDDLEWARE = [

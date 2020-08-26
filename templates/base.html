@@ -61,20 +61,17 @@
                     {% endif %}
     
                     <li class="nav-item">
-                        <a class="nav-link" href="">My Cart</a>
+                        <a href="{% url 'view_cart_url' %}" class="nav-link" href="">My Cart</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     {% if messages %}
-    <div>
-        <strong>Messages:</strong>
-        <ul>
-            {% for message in messages %}
-            <li>{{message}}</li>
-            {% endfor %}
-        </ul>
+    <div class="alert alert-success">
+        {% for message in messages %}
+        <p class="mb-0">{{message}}</p>
+        {% endfor %}  
     </div>
     {% endif %}
     {% block content %}

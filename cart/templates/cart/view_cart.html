@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{%block content %}
+<h1>Your Cart</h1>
+{%for key, cart_item in cart.items %}
+<div class="card">
+    <div class="card-title">{{cart_item.title}}</div>
+    <div class="card-body">
+        <p>
+            Quantity:{{cart_item.qty}}<br/>
+            Cost: {{cart_item.cost}}
+        </p>
+        <a class="btn btn-danger btn-sm" href="{% url 'remove_from_cart_url' product_id=cart_item.id %}">Remove</a>
+    </div>
+</div>
+{%endfor%}
+{%endblock %}
