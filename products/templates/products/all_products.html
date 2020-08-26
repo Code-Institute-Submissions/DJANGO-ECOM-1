@@ -1,8 +1,42 @@
 {% extends 'base.html' %}
 {% load cloudinary %}
+{% load widget_tweaks %}
 {% block content %}
-    <h1 class="text-center">All Products</h1>
-    <div class="container min-vh-80">
+
+    <div class="container min-vh-80 mt-3">
+        <h1 class="text-center">All Products</h1>
+        <form method="get">
+            <div class="card">
+                <div><a class="w-100 btn btn-secondary " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Filters</a></div>
+                <div class="collapse row card-body" id="collapseExample">
+                    <div class="form-group col-sm-4 col-md-3">
+                    {{ product_filter.form.brand.label_tag }}
+                    {% render_field product_filter.form.brand class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-4 col-md-3">
+                    <label> Max Price: </label>
+                    {% render_field product_filter.form.price_lt class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-4 col-md-3">
+                    {{ product_filter.form.category.label_tag }}
+                    {% render_field product_filter.form.category class="form-control" %}
+                    </div>
+                    <div class="form-group col-sm-8 col-md-6">
+                        <div>
+                        <label>Show Only:</label><br>
+                            {% for choice in product_filter.form.subCategory %}
+                            <label class="checkbox-inline">
+                                {{ choice.tag }} {{ choice.choice_label }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center ml-2">
+                        <button class="btn btn-primary">Filter</button>
+                    </div>
+                </div>
+            </div>
+        </form>
         <div class="row justify-content-sm-center justify-content-lg-start">
             {% for product in products%}
             <div class="card p-0 col-10 col-sm-5 col-md-4 col-lg-2 m-3">

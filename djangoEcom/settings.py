@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'cloudinary',
+    'widget_tweaks',
 
     # my apps
     'products',

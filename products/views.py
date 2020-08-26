@@ -1,15 +1,19 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib.auth.decorators import login_required, permission_required
 from .models import Product, Brand
+from .filters import ProductFilter
 
 # Create your views here.
 
 
 def all_products(request):
     products = Product.objects.all()
+    product_filter = ProductFilter(request.GET, queryset=products)
+    products = product_filter.qs
     context = {
         'title': 'Products',
         'products': products,
+        'product_filter': product_filter,
     }
     return render(request, 'products/all_products.html', context)
 
