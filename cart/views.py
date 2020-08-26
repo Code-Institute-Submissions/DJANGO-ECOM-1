@@ -13,7 +13,8 @@ def add_to_cart(request, product_id):
             'id': product_id,
             'title': product.title,
             'cost': float(product.price),
-            'qty': 1
+            'qty': 1,
+            'total_cost': float(product.price),
         }
         # save the cart back to sessions
         request.session['shopping_cart'] = cart
@@ -21,7 +22,8 @@ def add_to_cart(request, product_id):
         messages.success(request, "Product has been added to your cart!")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        cart[product_id]['qty'] += 1
+        cart[product_id]['qty'] = int(cart[product_id]['qty']) + 1
+        cart[product_id]['total_cost'] = float(cart[product_id]['total_cost']) + float(cart[product_id]['cost'])
         request.session['shopping_cart'] = cart
         messages.success(request, "Product has been added to your cart!")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
@@ -30,7 +32,12 @@ def add_to_cart(request, product_id):
 def view_cart(request):
     # retrieve the cart
     cart = request.session.get('shopping_cart', {})
+    total = 0
+    for k, v in cart.items():
+        total += float(v['cost']) * int(v['qty'])
+
     context = {
+        'total': total,
         'title': 'View Cart',
         'cart': cart
     }
@@ -58,6 +65,7 @@ def update_quantity(request, product_id):
     cart = request.session.get('shopping_cart')
     if product_id in cart:
         cart[product_id]['qty'] = request.POST['qty']
+        cart[product_id]['total_cost'] = int(request.POST['qty']) * float(cart[product_id]['cost'])
         request.session['shopping_cart'] = cart
         messages.success(request,
                          f"Quantity for {cart[product_id]['title']} has been changed")
