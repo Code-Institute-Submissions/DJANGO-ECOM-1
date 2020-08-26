@@ -4,7 +4,7 @@
     <h1 class="text-center">{{title}}</h1>
     <div class="container min-vh-80">
     {% for brand in brands %}
-        <h2 class="border-bottom mb-0">{{brand.title}}</h1>
+        <h2 class="border-bottom mb-0">{{brand.title}}</h2>
             <div class="row justify-content-sm-center justify-content-lg-start">
         {% for product in products %}
             {% if product.brand == brand %}

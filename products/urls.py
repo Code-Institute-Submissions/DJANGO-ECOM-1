@@ -23,4 +23,6 @@ urlpatterns = [
     path('performance/', products.views.performance, name='performance_url'),
     path('brands/', products.views.brands, name='brands_url'),
     path('search-results/', products.views.search_results, name='search_results_url'),
+    path('brands/<brand_id>', products.views.brand_page, name='brand_page_url'),
+    path('<product_id>/', products.views.product_details, name='product_detail_url'),
 ]

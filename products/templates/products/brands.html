@@ -8,7 +8,7 @@
         <div class="col-lg-6 p-3 col-sm-10 d-flex flex-column justify-content-center align-items-center">
             <h2>{{brand.title}}</h2>
             <p>{{brand.desc}}</p>
-            <a class="btn btn-primary" href="">Shop {{brand.title}}</a>
+            <a class="btn btn-primary" href="{% url 'brand_page_url' brand_id=brand.id%}">Shop {{brand.title}}</a>
         </div>
     </div>
     {% endfor%}

@@ -20,7 +20,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">nutrix.</a>
             <form class="form-inline flex-grow-1" method="GET" action="{% url 'search_results_url' %}">
-                <input class="form-control mr-2 flex-grow-1 border border-light" type="search" placeholder="Search products" aria-label="Search" id="Search">
+                <input class="form-control mr-2 flex-grow-1 border border-light" name="title" type="search" placeholder="Search products" aria-label="Search" id="Search">
                 <input class="btn btn-info mr-2" type="submit" value="Search">
             </form>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,9 +46,9 @@
                         <a class="nav-link" href="" id="BrandDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brands</a>
                         <div class="dropdown-menu bg-dark" aria-labelledby="BrandDropdown">
                             <a class="dropdown-item" href="{% url 'brands_url' %}">All Brands</a>
-                            <a class="dropdown-item" href="#">MusclePharm</a>
-                            <a class="dropdown-item" href="#">Optimum Nutrition</a>
-                            <a class="dropdown-item" href="#">BSN</a>
+                            <a class="dropdown-item" href="{% url 'brand_page_url' brand_id=2%}">MusclePharm</a>
+                            <a class="dropdown-item" href="{% url 'brand_page_url' brand_id=1%}">Optimum Nutrition</a>
+                            <a class="dropdown-item" href="{% url 'brand_page_url' brand_id=3%}">BSN</a>
                         </div>
                     </li>
                    
