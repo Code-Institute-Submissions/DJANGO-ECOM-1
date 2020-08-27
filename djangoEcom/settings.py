@@ -30,7 +30,7 @@ SECRET_KEY = '!a^70_t*d_75qusj=0txgj@#il(-mo5$h&t^0104=@*8$!sa6&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://nutrixapp.herokuapp.com/', '*']
+ALLOWED_HOSTS = ['https://nutrixapp.herokuapp.com', '*']
 
 # for flash messages
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
