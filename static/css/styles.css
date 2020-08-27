@@ -130,3 +130,9 @@
         max-width: 120px;
     }
 }
+
+@media screen and (max-width: 350px){
+    #Search {
+        max-width: 100px;
+    }
+}

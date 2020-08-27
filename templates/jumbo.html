@@ -6,30 +6,28 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%),url({% static 'images/example.jpg'%});background-attachment:fixed;background-position:center;background-size:cover;min-height:60vh;" class="carousel-item active">
+    <div style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%),url({% static 'images/example.jpg'%});background-position:center;background-size:cover;min-height:60vh;" class="carousel-item active">
         <div class="container carou-container">
             <div class="carou-cap"> 
-                <h2 class="mb-1 w-40">15% OFF ON SELECT PRODUCTS!</h2>
+                <h4 class="mb-1 w-40">15% OFF ON SELECT PRODUCTS!</h4>
                 <p class="mb-1">limited time only</p>
-                <a class="btn btn-primary" href="">Shop Now</a>
+                <a class="btn btn-primary" href="{% url 'all_products_url' %}">Shop Now</a>
             </div>
         </div>
     </div>
-    <div style="background-image:url({% static 'images/example.jpg'%});background-position:center;background-size:cover;min-height:60vh;" class="carousel-item">
+    <div style="background-image:url({% static 'images/musclepharmbanner.jpg'%});background-position:center;background-size:cover;min-height:60vh;" class="carousel-item">
         <div class="container carou-container">
             <div class="carou-cap"> 
-                <h2 class="mb-1 w-40">15% OFF ON SELECT PRODUCTS!</h2>
-                <p class="mb-1">limited time only</p>
-                <a class="btn btn-primary" href="">Shop Now</a>
+                <h4 class="mb-1 w-40">Products to perform your best</h4>
+                <a class="btn btn-primary" href="{% url 'brand_page_url' brand_id=1%}">Shop MusclePharm</a>
             </div>
         </div>
     </div>
-    <div style="background-image:url({% static 'images/example.jpg'%});background-position:center;background-size:cover;min-height:60vh;" class="carousel-item">
+    <div style="background-image:url({% static 'images/ONbanner.jpg'%});background-position:center;background-size:cover;min-height:60vh;" class="carousel-item">
         <div class="container carou-container">
             <div class="carou-cap"> 
-                <h2 class="mb-1 w-40">15% OFF ON SELECT PRODUCTS!</h2>
-                <p class="mb-1">limited time only</p>
-                <a class="btn btn-primary" href="">Shop Now</a>
+                <h4 class="mb-1 w-40">The grind never stops</h4>
+                <a class="btn btn-primary" href="">Shop Optimum Nutrition</a>
             </div>
         </div>
     </div>
